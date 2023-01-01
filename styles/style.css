@@ -27,6 +27,9 @@ html {
 body {
   font-family: "Fira Sans Condensed", sans-serif;
   background-color: var(--clr-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* global css */
