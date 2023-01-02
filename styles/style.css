@@ -14,24 +14,26 @@ html {
 }
 
 :root {
-  --clr-paradise-pink: #ef476f;
-  --clr-orange-yellow-crayola: #ffd166;
-  --clr-caribbean-green: #06d6a0;
-  --clr-blue-ncs: #118ab2;
-  --clr-midnight-green-eagle-green: #073b4c;
-  --clr-white: #eee3e3;
-  --clr-black: #0c0b0b;
-  --box-shadow: 0px 22px 12px rgba(0, 0, 0, 0.15);
+  --clr-amaranth-purple: #b7094c;
+  --clr-green: #40916c;
+  --clr-lite-green: #0dad5d;
+  --clr-powder-blue: #bee9e8;
+  --clr-maximum-blue: #62b6cb;
+  --clr-indigo-dye: #1b4965;
+  --clr-columbia-blue: #cae9ff;
+  --clr-carolina-blue: #5fa8d3;
+  --box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 body {
   font-family: "Fira Sans Condensed", sans-serif;
-  background-color: var(--clr-white);
+  background-color: var(--clr-maximum-blue);
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 /* global css */
 
 img {
@@ -45,4 +47,231 @@ a {
 
 li {
   list-style: none;
+}
+
+/* main card */
+
+.main-card {
+  width: 80%;
+  min-height: 98vh;
+  margin: 1rem;
+  border: 2px solid var(--clr-black);
+  background-color: #ffffff;
+  border-radius: 15px;
+  border: none;
+  box-shadow: var(--box-shadow);
+}
+
+.main-title {
+  color: var(--clr-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* balance */
+
+.balance {
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding-left: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.total {
+  font-size: 1.9rem;
+  color: var(--clr-lite-green);
+}
+
+/* second card */
+
+.second-card {
+  width: 80%;
+  min-height: 10vh;
+  border: 2px solid var(--clr-indigo-dye);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
+  border: none;
+  margin: auto;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* incomes */
+
+.income-input,
+.expense-input {
+  font-weight: 500;
+  text-align: center;
+}
+
+.income-number,
+.expense-number {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.income-number {
+  color: var(--clr-amaranth-purple);
+}
+
+.expense-number {
+  color: var(--clr-lite-green);
+}
+
+/* history */
+.history {
+  padding: 0.5rem 1.5rem 1.5rem 1.5rem;
+}
+
+.his-title {
+  margin-bottom: 0.6rem;
+}
+
+.his-list {
+  width: 100%;
+  height: 7.2vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
+}
+
+.add-transaction {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.new-tran {
+  font-size: 1.5rem;
+  color: var(--clr-indigo-dye);
+  margin-bottom: 0.6rem;
+}
+
+.small-card {
+  width: 95%;
+  font-weight: 800;
+  background-color: var(--clr-powder-blue);
+  margin-top: 0.8rem;
+  margin-left: 0.38rem;
+  padding: 1rem;
+  border: 2px solid;
+  border-radius: 13px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border: none;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  gap: 0.5rem;
+}
+
+.title,
+.amount {
+  font-size: 1.1rem;
+}
+
+.enter-title,
+.enter-amount {
+  padding: 5px;
+  border-radius: 6px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+
+/* button */
+
+.button-add{
+  padding-top: 0.7rem;
+}
+
+button {
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  transition: filter 250ms;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+.shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: hsl(0deg 0% 0% / 0.25);
+  will-change: transform;
+  transform: translateY(2px);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+.edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: linear-gradient(
+    to left,
+    hsl(340deg 100% 16%) 0%,
+    hsl(340deg 100% 32%) 8%,
+    hsl(340deg 100% 32%) 92%,
+    hsl(340deg 100% 16%) 100%
+  );
+}
+
+.front {
+  display: block;
+  position: relative;
+  padding: 3px 46px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  color: white;
+  background: hsl(345deg 100% 47%);
+  will-change: transform;
+  transform: translateY(-4px);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+button:hover {
+  filter: brightness(110%);
+}
+
+button:hover .front {
+  transform: translateY(-6px);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+button:active .front {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+
+button:hover .shadow {
+  transform: translateY(4px);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+button:active .shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+}
+
+button:focus:not(:focus-visible) {
+  outline: none;
 }
