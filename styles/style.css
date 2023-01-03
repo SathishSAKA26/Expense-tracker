@@ -31,6 +31,7 @@ body {
   font-family: "Fira Sans Condensed", sans-serif;
   background-color: var(--clr-maximum-blue);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -60,6 +61,8 @@ li {
   border-radius: 15px;
   border: none;
   box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
 }
 
 .main-title {
@@ -287,5 +290,46 @@ button:focus:not(:focus-visible) {
 }
 
 @media screen and (min-width: 765px) {
-  
+  .main-card {
+    width: 80%;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+  }
+
+  .header {
+    width: 50%;
+    min-height: 78vh;
+  }
+
+  .footer {
+    width: 50%;
+    height: 70vh;
+  }
+
+  .main-title {
+    font-size: 2.9rem;
+  }
+
+  .balance {
+    font-size: 1.6rem;
+  }
+
+  .second-card {
+    width: 70%;
+    height: 14vh;
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .his-title {
+    font-size: 1.6rem;
+  }
+
+  .hr-tag {
+    height: 11vh;
+  }
 }
