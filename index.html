@@ -31,7 +31,9 @@
       <!-- header -->
       <div class="header">
         <!-- Expense title -->
-        <h1 class="main-title">Expense-Tracker</h1>
+        <h1 class="main-title">
+          Expense-Tracker<i class="fa-sharp fa-solid fa-coins"></i>
+        </h1>
         <!-- Balance -->
         <div class="balance">
           <p class="balance-title">YOUR BALANCE</p>
@@ -52,7 +54,14 @@
         <div class="history">
           <h2 class="his-title">History</h2>
           <hr />
-          <li class="his-list">name</li>
+          <ul class="his-list" id="list">
+            <li class="minus">
+              cash <span>-₹500</span><button class="delete-btn">x</button>
+            </li>
+            <li class="plus">
+              Salary <span>₹300</span><button class="delete-btn">x</button>
+            </li>
+          </ul>
         </div>
       </div>
       <!-- footer -->
