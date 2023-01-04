@@ -54,6 +54,7 @@ li {
 
 .main-card {
   width: 80%;
+  height: 98vh;
   margin: 1rem;
   border: 2px solid var(--clr-black);
   background-color: rgb(229, 243, 255);
@@ -89,7 +90,7 @@ li {
 
 .second-card {
   width: 80%;
-  min-height: 10vh;
+  height: 10vh;
   border: 2px solid var(--clr-indigo-dye);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 10px;
