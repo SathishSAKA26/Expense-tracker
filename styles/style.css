@@ -117,11 +117,11 @@ li {
   font-weight: 600;
 }
 
-.income-number {
+.income-plus {
   color: var(--clr-lite-green);
 }
 
-.expense-number {
+.expense-minus {
   color: var(--clr-amaranth-purple);
 }
 
