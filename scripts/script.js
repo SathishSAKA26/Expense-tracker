@@ -17,10 +17,34 @@ const amountEl = document.getElementById("amount");
 
 // Global variable
 let transactions = [];
+let income = 0;
+let expense = 0;
+let balance = 0;
 
 // Functions
 function init() {
   listEl.innerHTML = null;
+}
+
+function updateValues() {
+  income = transactions
+    .map((transaction) => transaction.amount)
+    .filter((val) => val > 0)
+    .reduce((prev, val) => prev + val, 0);
+
+  expense = transactions
+    .map((transaction) => transaction.amount)
+    .filter((val) => val < 0)
+    .reduce((prev, val) => prev + val, 0);
+
+  balance = transactions
+    .map((transaction) => transaction.amount)
+    .reduce((prev, val) => prev + val, 0);
+
+  // innerText
+  balanceEl.innerHTML = `₹${balance}`;
+  incomeEl.innerHTML = `₹${income}`;
+  expenseEl.innerHTML = `₹${Math.abs(expense)}`;
 }
 
 // button function
@@ -34,6 +58,9 @@ function deleteTransaction(id) {
   transactions.forEach((transaction) => {
     addTransactionToDom(transaction);
   });
+
+  // update the income expense balance values
+  updateValues();
 }
 
 // create DOM function
@@ -47,7 +74,7 @@ function addTransactionToDom({ id, name, amount }) {
   liEl.classList = amount > 0 ? "plus" : "minus";
 
   // innerHTML
-  liEl.innerHTML = `<span>${name}</span> <span>${amount}</span> <button class='delete-btn' 
+  liEl.innerHTML = `<span>${name}</span> <span>₹${amount}</span> <button class='delete-btn' 
   onclick=deleteTransaction(${id})>x</button>`;
 
   // appendChild
@@ -65,7 +92,7 @@ formEl.addEventListener("submit", (e) => {
     const transaction = {
       id: Date.now(),
       name: titleEl.value,
-      amount: amountEl.value,
+      amount: Number(amountEl.value),
     };
 
     // add the transaction object to transaction
@@ -77,6 +104,9 @@ formEl.addEventListener("submit", (e) => {
     // clear of the input El
     titleEl.value = null;
     amountEl.value = null;
+
+    // update the income expense balance values
+    updateValues();
   }
 });
 

@@ -111,8 +111,8 @@ li {
   text-align: center;
 }
 
-.income-number,
-.expense-number {
+.income-plus,
+.expense-minus {
   font-size: 1.2rem;
   font-weight: 600;
 }
