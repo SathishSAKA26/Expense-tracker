@@ -118,11 +118,11 @@ li {
 }
 
 .income-number {
-  color: var(--clr-amaranth-purple);
+  color: var(--clr-lite-green);
 }
 
 .expense-number {
-  color: var(--clr-lite-green);
+  color: var(--clr-amaranth-purple);
 }
 
 /* history */
