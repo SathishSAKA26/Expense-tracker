@@ -54,7 +54,7 @@ li {
 
 .main-card {
   width: 80%;
-  min-height: 98vh;
+  min-height: 98vh; 
   margin: 1rem;
   border: 2px solid var(--clr-black);
   background-color: rgb(229, 243, 255);
