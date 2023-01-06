@@ -16,7 +16,10 @@ const titleEl = document.getElementById("title");
 const amountEl = document.getElementById("amount");
 
 // Global variable
-let transactions = [];
+
+const data = JSON.parse(localStorage.getItem("transactions"));
+
+let transactions = data.length > 0 ? data : [];
 let income = 0;
 let expense = 0;
 let balance = 0;
@@ -24,6 +27,14 @@ let balance = 0;
 // Functions
 function init() {
   listEl.innerHTML = null;
+
+  // initial list loading
+  transactions.forEach((transaction) => {
+    addTransactionToDom(transaction);
+  });
+
+  // update the income expense balance values
+  updateValues();
 }
 
 function updateValues() {
@@ -97,6 +108,9 @@ formEl.addEventListener("submit", (e) => {
 
     // add the transaction object to transaction
     transactions.push(transaction);
+
+    // data stor in the localStorage in the element
+    localStorage.setItem("transaction", JSON.stringify(transactions));
 
     //  add create to the DOM
     addTransactionToDom(transaction);
